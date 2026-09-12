@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>js array</h2>
+    <p id="demo"></p>
+    <p id="fruit"></p>
+    <p id="pop"></p>
+    <p id="pop2">
+    <p id="callstack"></p>
+
+    </p>
+    <script>
+        var items= [
+           "laptop",
+           "ipad",
+           "phone",
+
+        ];
+
+        document.getElementById("demo").innerHTML=items[1] ;
+
+        var fruits=[
+            "apple",
+            "strawberry",
+            "grape",
+            "guava"
+        ];
+       document.getElementById("fruit").innerHTML=fruits.join("/");
+       fruits.pop();
+       document.getElementById("pop").innerHTML=fruits.join("/");
+       fruits.pop();
+       document.getElementById("pop2").innerHTML=fruits.join("/");
+
+       function add(a,b){
+        return a + b ;
+       }
+
+       function averagesquare(a,b){
+        return (add(a,b)/2)**2 ;
+
+       }
+       let result=averagesquare(169,360);
+
+       document.getElementById("callstack").innerHTML=result;
+       
+
+
+
+    </script>
+</body>
+</html>
