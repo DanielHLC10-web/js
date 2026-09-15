@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background: aliceblue;
+            text-align: center;
+        }
+        h1{
+            color: #ff5a43;
+        }
+        #zoo{
+            margin: auto;
+            border: 3px double orangered;
+            border-radius: 50px;
+            padding: 10px;
+            width:300px;
+        }
+        .zone{
+            border: 1px solid whitesmoke;
+            border-radius:  100px;
+            padding: 10px;
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>My zoo</h2>
+    <p>Welcome to the worlds best zoo </p>
+    <div id="zoo">
+        <div class="zone">Zone 1:<span id="zone1"></span></div>
+         <div class="zone">Zone 2:<span id="zone2"></span></div>
+          <div class="zone">Zone 3:<span id="zone3"></span></div>
+           <div class="zone">Total Animals:<span id="total"></span></div>
+    </div>
+    <br>
+    <button onclick="openzoo()">Open the zoo information</button>
+    <p id="zoo-status"></p>
+    <script src="zoo.js"></script>
+</body>
+</html>
