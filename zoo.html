@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Digital Zoo Manager</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: aliceblue;
+      text-align: center;
+      color: #222222;
+    }
+
+    h1 {
+      color: darkgreen;
+    }
+
+    #zoo {
+      width: 420px;
+      border: 3px solid darkgreen;
+      border-radius: 12px;
+      background-color: white;
+      margin: 20px auto;
+      padding: 15px;
+    }
+
+    .zone {
+      border: 2px solid seagreen;
+      border-radius: 8px;
+      margin: 10px;
+      padding: 12px;
+      background-color: #f0fff0;
+      text-align: left;
+    }
+
+    .animal {
+      font-weight: bold;
+      color: darkorange;
+    }
+
+    button {
+      background-color: darkgreen;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      padding: 10px 22px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    #output {
+      width: 420px;
+      border: 2px dashed darkgreen;
+      border-radius: 10px;
+      background-color: #ffffff;
+      margin: 20px auto;
+      padding: 12px;
+      text-align: left;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>My Digital Zoo Manager</h1>
+
+  <p>
+    Use JavaScript and the DOM to explore animals, zones, parent nodes,
+    child nodes, and sibling nodes.
+  </p>
+
+  <div id="zoo">
+
+    <div class="zone" id="lionZone">
+      <h2>Lion Zone</h2>
+      <p>Animal: <span class="animal">Lion</span></p>
+    </div>
+
+    <div class="zone" id="elephantZone">
+      <h2>Elephant Zone</h2>
+      <p>Animal: <span class="animal">Elephant</span></p>
+    </div>
+
+    <div class="zone" id="pandaZone">
+      <h2>Panda Zone</h2>
+      <p>Animal: <span class="animal">Panda</span></p>
+    </div>
+
+  </div>
+
+  <button onclick="managezoo()">Manage Zoo</button>
+
+  <div id="output">
+    Zoo information will appear here.
+  </div>
+
+  <script>
+    function managezoo(){
+        let zoo=document.getElementById("zoo");
+        let lionZone=document.getElementById("lionZone");
+        let elephantZone=document.getElementById("elephantZone");
+        let pandaZone=document.getElementById("pandaZone");
+        lionZone.style.backgroundColor = "#BA8E4F";
+      elephantZone.style.backgroundColor = "#FAD5A5";
+      pandaZone.style.backgroundColor = "#2C6705";
+
+      lionZone.querySelector("h2").innerHTML = "Updated Lion Zone";
+      elephantZone.querySelector("h2").innerHTML = "Updated Elephant Zone";
+      pandaZone.querySelector("h2").innerHTML = "Updated Panda Zone";
+ 
+    }
+  </script>
