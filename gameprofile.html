@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+            background-color: aliceblue;
+            font-family: Arial, Helvetica, sans-serif;
+            
+            
+        }
+        div{
+            border:5px double blue;
+            width: 250px;
+            margin: 5px auto;
+            padding: 6px;
+        }
+        button{
+            background-color: blanchedalmond;
+            border: 0;
+            font-size: 50px;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>My game profile</h1>
+    <button onclick="viewprofile()">View game profile</button>
+    <div> Name :  <span id="name"></span></div>
+    <div> Score : <span id="score"></span></div>
+    <div> Rank : <span id="rank"></span></div>
+    <div> Greeting : <span id="greeting"></span></div>
+    <div> Stars : <span id="stars"></span></div>
+    <div> Bonus : <span id="bonus"></span></div>
+    <div> Team : <span id="team"></span></div>
+
+    <script>
+        function viewprofile(){
+            let name="Dani";
+            let score=75, high=100 ;
+            let bonus=null , team ;
+            let rank;
+            if(score>=80)rank="gold";
+            else if (score>=50)rank="silver";
+            else rank="bronze";
+
+            let h=new Date().getHours();
+            let greeting= h<12 ? "Good Morning!": h<17 ? "Good Afternoon !" : "Good Evening";
+             let stars="", i=0 ;
+             while(i<5){
+                stars+="*";
+                i++;
+             }
+
+             document.getElementById("name").innerHTML=name;
+             document.getElementById("score").innerHTML= score + " out of " + high;
+             document.getElementById("rank").innerHTML=rank;
+             document.getElementById("greeting").innerHTML=greeting;
+             document.getElementById("stars").innerHTML=stars;
+             document.getElementById("bonus").innerHTML=bonus;
+             document.getElementById("team").innerHTML=team;
+        }
+        
+    </script>
+
+</body>
+</html>
