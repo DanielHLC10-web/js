@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>My Planet card</h1>
+    <button onclick="showPlanet()">Show Planet</button>
+    <div id="cards"></div>
+
+    <script>
+        class Planet{
+            constructor(name,fact){
+                this.name=name;
+                this.fact=fact;
+            }
+            describe(){
+                return this.name+ "-" +this.fact;
+
+            }
+        }
+        function showPlanet(){
+            let p1 =new Planet("Earth", "our home");
+            let p2=new Planet("Venus", "Most volcanos and the most fiery");
+            let p3=new Planet("Mercury","Smallest Planet");
+            document.getElementById("cards").innerHTML=
+            "<div class='card'>"+p1+describe()+"</div>"+
+            "<div class='card'>"+p2+describe()+"</div>"+
+            "<div class='card'>"+p3+describe()+"</div>";
+            
+        }
+        
+    </script>
+</body>
+</html>
