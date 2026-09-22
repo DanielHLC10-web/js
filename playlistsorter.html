@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container py-3">
+        <h1>Playlist Sorter</h1>
+        <button onclick="az()">A-Z</button>
+        <button onclick="za()">Z-A</button>
+        <p id="songs"></p>
+        <button onclick="least()">Least Played</button>
+        <button onclick="most()">Most Played</button>
+        <p id="plays"></p>
+        <button onclick="label()">Label</button>
+        <p id="label"></p>
+    </div>
+
+    <script>
+        var songs=["Don't","All My Life","Senorita","Post to Be"];
+        var plays=[500,650,780,1000];
+        
+        var songsbox=document.getElementById("songs");
+        var playsbox=document.getElementById("plays");
+        var labels=document.getElementById("label");
+
+        songsbox.innerHTML=songs;
+        playbox.innerHTML=plays;
+
+        
+        function az(){
+         songs.sort();
+         songsbox.innerHTML=songs;
+
+        }
+        function za(){
+            songs.sort();
+         songs.reverse();
+         songsbox.innerHTML=songs;
+        }
+        function least(){
+            plays.sort(function(a,b){
+                return a-b;
+
+            });
+                playsbox.innerHTML=plays;
+        
+        }
+        function most(){
+            plays.sort(function (a,b){
+                return b-a;
+            });
+            playsbox.innerHTML=plays;
+        }
+        function label(){
+                labels.innerHTML=plays.map(function(p){
+                    return p + "plays";
+                });
+            
+
+        }
+        
+        
+        
+        </script>
+</body>
+</html>
