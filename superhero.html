@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Superhero Power Cards</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f4ff;
+      text-align: center;
+      padding: 30px;
+    }
+
+    h1 {
+      color: #ff4d4d;
+    }
+
+    p {
+      color: #444444;
+    }
+
+    button {
+      background-color: #ff4d4d;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .card-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 25px;
+      flex-wrap: wrap;
+    }
+
+    .hero-card {
+      background-color: white;
+      border: 3px solid #ff4d4d;
+      border-radius: 12px;
+      width: 220px;
+      padding: 18px;
+      text-align: left;
+    }
+
+    .hero-name {
+      font-size: 20px;
+      font-weight: bold;
+      color: #222222;
+      margin-top: 0;
+    }
+
+    .hero-role {
+      color: #333333;
+      font-size: 14px;
+    }
+
+    .hero-power {
+      color: #0057b8;
+      font-size: 14px;
+    }
+
+    .hero-mission {
+      color: #666666;
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>My Superhero Power Cards</h1>
+
+  <p>
+    Click the button to create superhero objects using JavaScript classes.
+  </p>
+
+  <button onclick="showHeroes()">Show Superheroes</button>
+
+  <div class="card-container" id="heroCards"></div>
+
+  <script>
+    class Superhero {
+      constructor(name, power, mission, actor, teamRole) {
+        this.name = name;
+        this.power = power;
+        this.mission = mission;
+        this.actor = actor;
+        this.teamRole = teamRole;
+      }
+
+      describeHero() {
+        return `
+          <div class='hero-card'>
+            <h3 class='hero-name'>${this.name} (${this.actor})</h3>
+            <p class='hero-role'><strong>Role:</strong> ${this.teamRole}</p>
+            <p class='hero-power'><strong>Power:</strong> ${this.power}</p>
+            <p class='hero-mission'><strong>Mission:</strong> ${this.mission}</p>
+          </div>
+        `;
+      }
+    }
+
+
+    function showHeroes() {
+      
+      const heroContainer = document.getElementById("heroCards");
+
+      const hero1 = new Superhero(
+        "Iron Man",
+        "Genius-level intellect, powered armor suit",
+        "Protect the world from existential technological threats",
+        "Tony Stark",
+        "Tech Leader"
+      );
+
+      const hero2 = new Superhero(
+        "Captain America",
+        "Superhuman strength, agility, and vibranium shield mastery",
+        "Uphold justice and protect liberty across the globe",
+        "Steve Rogers",
+        "Field Commander"
+      );
+
+      const hero3 = new Superhero(
+        "Thor",
+        "God of Thunder, lightning control, wielding Mjolnir",
+        "Defend the Nine Realms and Earth from cosmic danger",
+        "Thor Odinson",
+        "Heavy Hitter"
+      );
+
+      const hero4 = new Superhero(
+        "Black Widow",
+        "Master spy, expert martial artist, tactical brilliance",
+        "Atone for her past by guarding innocent lives",
+        "Natasha Romanoff",
+        "Infiltration & Intelligence"
+      );
+
+      const avengers = [hero1, hero2, hero3, hero4];
+
+      
+      let content = "";
+      avengers.forEach((hero) => {
+        content += hero.describeHero();
+      });
+
+      
+      heroContainer.innerHTML = content;
+    }
+  </script>
+
+</body>
+</html>
