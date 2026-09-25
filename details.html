@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center">Magic word lab</h2>
+
+
+        <div class="row">
+
+            <div class="col-md-6">
+                <div class="card">
+                    <h4>Score</h4>
+                    <button class="btn btn-success" onclick="score()">See score</button>
+                    <p id="a"></p>
+                </div>
+                </div>
+
+                <div class="col-md-6">
+                <div class="card">
+                    <h4>Converter</h4>
+                    <input id="n" class="form-control">
+                    <button class="btn btn-danger" onclick="convert()">Convert</button>
+                    <p id="b"></p>
+                </div>
+                </div>
+
+                <div class="col-md-6">
+                <div class="card">
+                    <h4>Replace</h4>
+                    <input class="form-control my-2" placeholder="sentence" id="rp">
+                    <input class="form-control my-2" placeholder="find" id="rr">
+                    <input class="form-control my-2" placeholder="replace" id="rt">
+                    <button class="btn btn-info" onclick="replace()">Replace</button>
+                    <p id="c"></p>
+                </div>
+                </div>
+
+                <div class="col-md-6">
+                <div class="card">
+                    <h4>Divison</h4>
+                    <input id="da" class="form-control">
+                    <button class="btn btn-warning" onclick="divison()">Division</button>
+                    <p id="d"></p>
+                </div>
+                </div>
+
+
+                
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function score(){
+            a.innerHTML="score : 350 <br> Player : Dani <br> Game Over : False";
+        }
+        function convert(){
+           b.innerHTML="String :" + String(n.value) + "<br> Number : " + Number(n.value);
+        }
+        function replace(){
+            c.innerHTML=rp.value.replace(rr.value,rt.value);
+        }
+        function divison(){
+            d.innerHTML=da.value==0?"Error": 100/da.value;
+        }
+    </script>
+</body>
+</html>
