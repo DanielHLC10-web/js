@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center">Text Fix Lab</h2>
+
+        <div class="row">
+
+            <div class="col-md-6">
+                <div class="card">
+                    <h4>Score</h4>
+                    <button class="btn btn-success" onclick="score()">See score</button>
+                    <p id="a"></p>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card">
+                    <h4>Converter</h4>
+                    
+                    <button class="btn btn-danger" onclick="convertTypes()">Convert</button>
+                    <p id="convertResult"></p>
+                </div>
+            </div>
+
+            <div class="card md-6">
+    <div class="card-body">
+      <h3 class="card-title">Fix My Sentence</h3>
+      <p>Sentence: I like maths because maths is fun.</p>
+      <button class="btn btn-warning" onclick="replaceText()">Replace Word</button>
+      <div id="replaceResult" class="box p-3 mt-3 rounded">Click the button to replace a word!</div>
+    </div>
+  </div>
+
+
+
+        </div>
+    </div>
+
+    <script>
+        function score(){
+            a.innerHTML="score : 95 <br> Name : Dani <br> Letter : A+";
+        }
+
+        function checkTypes() {
+            var name = "Dani";
+            var score = 95;
+        }
+
+        function convertTypes() {
+            var marksText = "95";
+            var marksNumber = Number(marksText);
+            var wrong = "5 marks";
+            var ageText = String(wrong);
+
+            document.getElementById("convertResult").innerHTML =
+              '"95" as a number: ' + marksNumber + "<br>" +
+              "Type: " + typeof marksNumber + "<br><br>" +
+              "5 as text: " + ageText + "<br>" +
+              "Type: " + typeof ageText;
+        }
+
+        function replaceText() {
+            var sentence = "I like maths because reading is fun.";
+            var newSentence = sentence.replace("maths", "literature");
+
+            document.getElementById("replaceResult").innerHTML =
+              "Original: " + sentence + "<br><br>" +
+              "Fixed: " + newSentence;
+        }
+
+       
+    </script>
+</body>
+</html>
