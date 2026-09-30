@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucky draw</title>
+    <style>
+        body{
+            
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            background-color:aliceblue;
+            border: 3px dashed;
+            width: 200px;
+            margin-left: 200px;
+            text-align: center;
+        }
+
+        input{
+            padding: 8px;
+            margin : 3px auto;
+        }
+        button {
+            padding: 8px 20px;
+            border: 3px dashed ;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>LUCKY DRAW</h1>
+    <input id="name" placeholder="Enter your name"><br>
+    <label>1-5 only</label><br><input id="guess" type="number" min="1" max="5"><br>
+    <button onclick="check()">Try My Luck!</button>
+    <p id="result"></p>
+    
+
+
+    <script>
+        function check(){
+        let name=document.getElementById("name").value;
+        let guess=document.getElementById("guess").value;
+        let lucky=Math.floor(Math.random()*5)+1;
+
+        if (name==""||guess==""){
+            result.textContent="Please fill in all the required details.";
+        }
+        else if (guess==lucky){
+            result.textContent="CONGRATUATIONS you have guessed the lucky number and won a prize!";
+
+        }
+        else{
+            result.textContent="BooHoo you lost.Better luck next time." + " The lucky number was " + lucky;
+        }
+    }
+    </script>
+</body>
+</html>
